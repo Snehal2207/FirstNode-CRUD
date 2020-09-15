@@ -1,0 +1,29 @@
+html
+    head
+        title Insert
+    body
+        form(method='POST', action=`/insertstudent`)
+            table(align='center',border=1,padding='3px')
+                tr
+                    th(colspan=2) 
+                        h1 Insert Data
+                tr
+                    th
+                        lable Name:
+                    th
+                        input(type='text',name='username',value='',placeholder='Enter Name')
+                tr
+                    th
+                        lable Age:
+                    th
+                        input(type='number',name='userage',value='' min=0,placeholder='Enter Age')
+                tr
+                    th
+                        lable City:
+                    th
+                        select(name='ddcity',id='ctid')
+                            each city in cityList
+                                option(value=`${city.id}`) #{city.cname}
+                tr
+                    th(colspan=2)
+                        input(type='submit',value='submit')

@@ -1,0 +1,35 @@
+html
+    head
+        title= student1.id
+    body
+        p Id #{student1.id}
+        p Name: #{student1.name}
+        p Age: #{student1.age}
+        p city: #{student1.cname}
+        form(method='POST', action=`/edit/${student1.id}`)
+            table(align='center',border=1,padding='3px')
+                tr
+                    th(colspan=2) 
+                        h1 Update Form
+                        input(type='hidden',name='userid',value= student1.id )
+                tr
+                    th
+                        lable Name:
+                    th
+                        input(type='text',name='username',value=student1.name)
+                tr
+                    th
+                        lable Age:
+                    th
+                        input(type='number',name='userage' min="0",value=student1.age)
+                tr
+                    th
+                        lable City:
+                    th
+                        input(type='number',name='usercityid' min='0' max = '8',value=student1.cid)
+                        //- select(name='ddcity',id='ctid')
+                        //-     each city in studentList
+                        //-         option(value=`${city.id}`) #{city.cname}
+                tr
+                    th(colspan=2)
+                        input(type='submit',value='submit')

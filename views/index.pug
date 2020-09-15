@@ -1,0 +1,28 @@
+html
+    head    
+        title StudentList
+    body
+        table(border=1,align="center")
+            tr
+                td(colspan="6")
+                    h1.center Student-List
+                    a(href="insertdata") INSERT
+                
+            tr
+                th ID
+                th Name
+                th Age
+                th City
+                th EDIT
+                th DELETE
+            for student in studentList
+                tr
+                    td=student.id
+                    td=student.name
+                    td=student.age
+                    td=student.cname
+                    td
+                        //a(href='/edit/'+student.id) EDIT
+                        a(href=`/edit/${student.id}`) EDIT
+                    td
+                        a(href=`/delete/${student.id}`) DELETE
